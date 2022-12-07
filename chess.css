@@ -1,0 +1,45 @@
+body{
+    background: #356dde;
+}
+
+.chessboard{
+    background: grey;
+    width: 98vh;
+    height: 98vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.black{
+    background: #22434f;
+    width: 12.5%;
+    height: 12.5%;
+    float: left;
+    color: white;
+}
+
+.white{
+    background: #c2edfc;
+    width: 12.5%;
+    height: 12.5%;
+    float: left;
+    color: white;
+}
+
+#reset{
+    position: fixed;
+    right: 0.1vw;
+    bottom: 0.1vh;
+}
+
+.chesspiece{
+    height: 100%;
+    vertical-align: center;
+    padding: 1%;
+    display:initial;
+}
+
+.fieldtext{
+    position: absolute;
+}
