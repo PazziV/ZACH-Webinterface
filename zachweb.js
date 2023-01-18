@@ -21,20 +21,29 @@ else
 //-------------------------Socket--------------------------
 var socket = new WebSocket("ws://192.168.82.232:54321");
 
-// When the connection is open, send some data to the server
-socket.onopen = function () {
-    socket.send('Ping'); // Send the message 'Ping' to the server
-};
-    
-    // Log errors
-socket.onerror = function (error) {
-    console.log('WebSocket Error ' + error);
-};
-    
-    // Log messages from the server
-socket.onmessage = function (e) {
-    console.log('Server: ' + e.data);
-};
+socket.onopen = function(e) {
+    alert("[open] Connection established");
+    alert("Sending to server");
+    socket.send("My name is John");
+  };
+  
+  socket.onmessage = function(event) {
+    alert(`[message] Data received from server: ${event.data}`);
+  };
+  
+  socket.onclose = function(event) {
+    if (event.wasClean) {
+      alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
+    } else {
+      // e.g. server process killed or network down
+      // event.code is usually 1006 in this case
+      alert('[close] Connection died');
+    }
+  };
+  
+  socket.onerror = function(error) {
+    alert(`[error]`);
+  };
 
 //---------------------------------------------------------
 
