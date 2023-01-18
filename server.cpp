@@ -22,7 +22,7 @@ int main(int argc, char const* argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	// Forcefully attaching socket to the port 8080
+	// Forcefully attaching socket to the port
 	if (setsockopt(server_fd, SOL_SOCKET,
 				SO_REUSEADDR | SO_REUSEPORT, &opt,
 				sizeof(opt))) {
@@ -33,7 +33,7 @@ int main(int argc, char const* argv[])
 	address.sin_addr.s_addr = INADDR_ANY;
 	address.sin_port = htons(PORT);
 
-	// Forcefully attaching socket to the port 8080
+	// Forcefully attaching socket to the port
 	if (bind(server_fd, (struct sockaddr*)&address,
 			sizeof(address))
 		< 0) {
@@ -51,10 +51,16 @@ int main(int argc, char const* argv[])
 		perror("accept");
 		exit(EXIT_FAILURE);
 	}
-	valread = read(new_socket, buffer, 1024);
-	printf("%s\n", buffer);
-	send(new_socket, hello, strlen(hello), 0);
-	printf("Hello message sent\n");
+
+	while(1)
+	{
+		// valread = read(new_socket, buffer, 1024);
+		// printf("%s\n", buffer);
+		send(new_socket, hello, strlen(hello), 0);
+		//printf("Hello message sent\n");
+		
+		sleep(1);
+	}
 
 	// closing the connected socket
 	close(new_socket);
