@@ -19,19 +19,19 @@ else
 }
 
 //-------------------------Socket--------------------------
-var socket = new WebSocket("ws://192.168.82.232:54321");
+var socket = new WebSocket("ws://192.168.111.232:9002");
 
 socket.onopen = function(e) {
     alert("[open] Connection established");
     alert("Sending to server");
     socket.send("My name is John");
-  };
+};
   
-  socket.onmessage = function(event) {
+socket.onmessage = function(event) {
     alert(`[message] Data received from server: ${event.data}`);
-  };
+};
   
-  socket.onclose = function(event) {
+socket.onclose = function(event) {
     if (event.wasClean) {
       alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
     } else {
@@ -39,11 +39,11 @@ socket.onopen = function(e) {
       // event.code is usually 1006 in this case
       alert('[close] Connection died');
     }
-  };
+};
   
-  socket.onerror = function(error) {
+socket.onerror = function(error) {
     alert(`[error]`);
-  };
+};
 
 //---------------------------------------------------------
 
