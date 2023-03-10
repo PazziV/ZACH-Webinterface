@@ -5,284 +5,284 @@
         <!--<link rel="icon" type="image/x-icon" href="pathToIcon">-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
         <link rel="stylesheet" href="chess.css" type="text/css">
-        <script type="text/javascript" src="zachweb.js"></script>
     </head>
 
     <body onload="syncBoard()">
         <div class="chessboard">
             <!--Reihe 8-->
-            <div class="white" id="A8" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">A8</div>
-                <img class="chesspiece" src="images/black_rook.png"/>
+                <img class="chesspiece" id="A8" src="images/black_rook.png"/>
             </div>
-            <div class="black" id="B8" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">B8</div>
-                <img class="chesspiece" src="images/black_knight.png"/>
+                <img class="chesspiece" id="B8" src="images/black_knight.png"/>
             </div>
-            <div class="white" id="C8" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">C8</div>
-                <img class="chesspiece" src="images/black_bishop.png"/>
+                <img class="chesspiece" id="C8" src="images/black_bishop.png"/>
             </div>
-            <div class="black" id="D8" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">D8</div>
-                <img class="chesspiece" src="images/black_queen.png"/>
+                <img class="chesspiece" id="D8" src="images/black_queen.png"/>
             </div>
-            <div class="white" id="E8" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">E8</div>
-                <img class="chesspiece" src="images/black_king.png"/>
+                <img class="chesspiece" id="E8"  src="images/black_king.png"/>
             </div>
-            <div class="black" id="F8" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">F8</div>
-                <img class="chesspiece" src="images/black_bishop.png"/>
+                <img class="chesspiece" id="F8" src="images/black_bishop.png"/>
             </div>
-            <div class="white" id="G8" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">G8</div>
-                <img class="chesspiece" src="images/black_knight.png"/>
+                <img class="chesspiece" id="G8" src="images/black_knight.png"/>
             </div>
-            <div class="black" id="H8" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">H8</div>
-                <img class="chesspiece" src="images/black_rook.png"/>
+                <img class="chesspiece" id="H8" src="images/black_rook.png"/>
             </div>
 
             <!--Reihe 7-->
-            <div class="black" id="A7" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">A7</div>
-                <img class="chesspiece" src="images/black_pawn.png"/>
+                <img class="chesspiece" id="A7" src="images/black_pawn.png"/>
             </div>
-            <div class="white" id="B7" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">B7</div>
-                <img class="chesspiece" src="images/black_pawn.png"/>
+                <img class="chesspiece" id="B7" src="images/black_pawn.png"/>
             </div>
-            <div class="black" id="C7" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">C7</div>
-                <img class="chesspiece" src="images/black_pawn.png"/>
+                <img class="chesspiece" id="C7" src="images/black_pawn.png"/>
             </div>
-            <div class="white" id="D7" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">D7</div>
-                <img class="chesspiece" src="images/black_pawn.png"/>
+                <img class="chesspiece" id="D7" src="images/black_pawn.png"/>
             </div>
-            <div class="black" id="E7" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">E7</div>
-                <img class="chesspiece" src="images/black_pawn.png"/>
+                <img class="chesspiece" id="E7" src="images/black_pawn.png"/>
             </div>
-            <div class="white" id="F7" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">F7</div>
-                <img class="chesspiece" src="images/black_pawn.png"/>
+                <img class="chesspiece" id="F7" src="images/black_pawn.png"/>
             </div>
-            <div class="black" id="G7" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">G7</div>
-                <img class="chesspiece" src="images/black_pawn.png"/>
+                <img class="chesspiece" id="G7" src="images/black_pawn.png"/>
             </div>
-            <div class="white" id="H7" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">H7</div>
-                <img class="chesspiece" src="images/black_pawn.png"/>
+                <img class="chesspiece" id="H7" src="images/black_pawn.png"/>
             </div>
 
             <!--Reihe 6-->
-            <div class="white" id="A6" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">A6</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="A6"/>
             </div>
-            <div class="black" id="B6" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">B6</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="B6"/>
             </div>
-            <div class="white" id="C6" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">C6</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="C6"/>
             </div>
-            <div class="black" id="D6" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">D6</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="D6"/>
             </div>
-            <div class="white" id="E6" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">E6</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="E6"/>
             </div>
-            <div class="black" id="F6" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">F6</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="F6"/>
             </div>
-            <div class="white" id="G6" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">G6</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="G6"/>
             </div>
-            <div class="black" id="H6" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">H6</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="H6"/>
             </div>
 
             <!--Reihe 5-->
-            <div class="black" id="A5" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">A5</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="A5"/>
             </div>
-            <div class="white" id="B5" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">B5</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="B5"/>
             </div>
-            <div class="black" id="C5" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">C5</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="C5"/>
             </div>
-            <div class="white" id="D5" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">D5</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="D5"/>
             </div>
-            <div class="black" id="E5" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">E5</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="E5"/>
             </div>
-            <div class="white" id="F5" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">F5</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="F5"/>
             </div>
-            <div class="black" id="G5" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">G5</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="G5"/>
             </div>
-            <div class="white" id="H5" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">H5</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="H5"/>
             </div>
 
             <!--Reihe 4-->
-            <div class="white" id="A4" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">A4</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="A4"/>
             </div>
-            <div class="black" id="B4" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">B4</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="B4"/>
             </div>
-            <div class="white" id="C4" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">C4</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="C4"/>
             </div>
-            <div class="black" id="D4" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">D4</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="D4"/>
             </div>
-            <div class="white" id="E4" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">E4</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="E4"/>
             </div>
-            <div class="black" id="F4" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">F4</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="F4"/>
             </div>
-            <div class="white" id="G4" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">G4</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="G4"/>
             </div>
-            <div class="black" id="H4" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">H4</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="H4"/>
             </div>
 
             <!--Reihe 3-->
-            <div class="black" id="A3" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">A3</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="A3"/>
             </div>
-            <div class="white" id="B3" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">B3</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="B3"/>
             </div>
-            <div class="black" id="C3" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">C3</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="C3"/>
             </div>
-            <div class="white" id="D3" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">D3</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="D3"/>
             </div>
-            <div class="black" id="E3" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">E3</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="E3"/>
             </div>
-            <div class="white" id="F3" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">F3</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="F3"/>
             </div>
-            <div class="black" id="G3" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">G3</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="G3"/>
             </div>
-            <div class="white" id="H3" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">H3</div>
-                <img class="chesspiece"/>
+                <img class="chesspiece" id="H3"/>
             </div>
 
             <!--Reihe 2-->
-            <div class="white" id="A2" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">A2</div>
-                <img class="chesspiece" src="images/white_pawn.png"/>
+                <img class="chesspiece" id="A2" src="images/white_pawn.png"/>
             </div>
-            <div class="black" id="B2" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">B2</div>
-                <img class="chesspiece" src="images/white_pawn.png"/>
+                <img class="chesspiece" id="B2" src="images/white_pawn.png"/>
             </div>
-            <div class="white" id="C2" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">C2</div>
-                <img class="chesspiece" src="images/white_pawn.png"/>
+                <img class="chesspiece" id="C2" src="images/white_pawn.png"/>
             </div>
-            <div class="black" id="D2" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">D2</div>
-                <img class="chesspiece" src="images/white_pawn.png"/>
+                <img class="chesspiece" id="D2" src="images/white_pawn.png"/>
             </div>
-            <div class="white" id="E2" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">E2</div>
-                <img class="chesspiece" src="images/white_pawn.png"/>
+                <img class="chesspiece" id="E2" src="images/white_pawn.png"/>
             </div>
-            <div class="black" id="F2" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">F2</div>
-                <img class="chesspiece" src="images/white_pawn.png"/>
+                <img class="chesspiece" id="F2" src="images/white_pawn.png"/>
             </div>
-            <div class="white" id="G2" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">G2</div>
-                <img class="chesspiece" src="images/white_pawn.png"/>
+                <img class="chesspiece" id="G2" src="images/white_pawn.png"/>
             </div>
-            <div class="black" id="H2" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">H2</div>
-                <img class="chesspiece" src="images/white_pawn.png"/>
+                <img class="chesspiece" id="H2" src="images/white_pawn.png"/>
             </div>
 
             <!--Reihe 1-->
-            <div class="black" id="A1" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">A1</div>
-                <img class="chesspiece" src="images/white_rook.png"/>
+                <img class="chesspiece" id="A1" src="images/white_rook.png"/>
             </div>
-            <div class="white" id="B1" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">B1</div>
-                <img class="chesspiece" src="images/white_knight.png"/>
+                <img class="chesspiece" id="B1" src="images/white_knight.png"/>
             </div>
-            <div class="black" id="C1" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">C1</div>
-                <img class="chesspiece" src="images/white_bishop.png"/>
+                <img class="chesspiece" id="C1" src="images/white_bishop.png"/>
             </div>
-            <div class="white" id="D1" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">D1</div>
-                <img class="chesspiece" src="images/white_queen.png"/>
+                <img class="chesspiece" id="D1" src="images/white_queen.png"/>
             </div>
-            <div class="black" id="E1" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">E1</div>
-                <img class="chesspiece" src="images/white_king.png"/>
+                <img class="chesspiece" id="E1" src="images/white_king.png"/>
             </div>
-            <div class="white" id="F1" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">F1</div>
-                <img class="chesspiece" src="images/white_bishop.png"/>
+                <img class="chesspiece" id="F1" src="images/white_bishop.png"/>
             </div>
-            <div class="black" id="G1" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="black" onclick="fieldClick()">
                 <div class="fieldtext">G1</div>
-                <img class="chesspiece" src="images/white_knight.png"/>
+                <img class="chesspiece" id="G1" src="images/white_knight.png"/>
             </div>
-            <div class="white" id="H1" onclick="showMovesClick()" ondblclick="movePieceDBClick()">
+            <div class="white" onclick="fieldClick()">
                 <div class="fieldtext">H1</div>
-                <img class="chesspiece" src="images/white_rook.png"/>
+                <img class="chesspiece" id="H1" src="images/white_rook.png"/>
             </div>
         </div>
 
         <button id="reset" onclick="onResetClick()">Reset</button>
+        <script type="text/javascript" src="zachweb.js"></script>
     </body>
 </html>
