@@ -31,6 +31,16 @@ const color = {
     blank: 2
 };
 
+const piece = {
+        none: 0,
+        PAWN: 1,   
+        BISHOP: 2,     
+        KNIGHT: 3,     
+        ROOK: 4,       
+        QUEEN: 5,
+        KING: 6
+};
+
 let msgArray;
 
 const playField = ["A8","B8","C8","D8","E8","F8","G8","H8",
@@ -42,16 +52,20 @@ const playField = ["A8","B8","C8","D8","E8","F8","G8","H8",
                 "A2","B2","C2","D2","E2","F2","G2","H2",
                 "A1","B1","C1","D1","E1","F1","G1","H1"];
 
-//-------------------------Socket--------------------------
-const socket = new WebSocket("ws://192.168.100.232:9002");
+const hostname = "http://" + location.hostname;
 
-socket.onopen = function(e) {
+//-------------------------Socket--------------------------
+//const socket = new WebSocket("ws://192.168.100.232:9002"); // bei Handy Hotspot
+const socket = new WebSocket("ws://192.168.8.103:9002"); // Huawei Cube
+
+socket.onopen = function(e)
+{
     console.log("[open] Connection established");
-    //alert("Sending to server");
     socket.send("My name is John");
 };
 
-socket.onmessage = function(event) {
+socket.onmessage = function(event) 
+{
     let message = event.data;
     console.log("[message] Data received from server: " + message);
     
@@ -60,10 +74,10 @@ socket.onmessage = function(event) {
     switch(msgArray[0])
     {
         case command.RESET:
-
+            updateBoard();
             break;
         case command.SYNC:
-            
+            updateBoard();
             break;
         case command.GETMOVES:
 
@@ -74,15 +88,20 @@ socket.onmessage = function(event) {
     }
 };
   
-socket.onclose = function(event) {
-    if (event.wasClean) {
+socket.onclose = function(event) 
+{
+    if (event.wasClean) 
+    {
       alert("[close] Connection closed cleanly, code=" + event.code + "reason=" + event.reason);
-    } else {
+    } 
+    else 
+    {
       alert("[close] Connection died");
     }
 };
   
-socket.onerror = function(error) {
+socket.onerror = function(error) 
+{
     alert("[ERROR]");
 };
 
@@ -90,20 +109,79 @@ socket.onerror = function(error) {
 
 function syncBoard()
 {
-    socket.send("syncBoard");
+    socket.send(command.SYNC);
 }
 
 function onResetClick()
 {
-    socket.send("Reset");
+    socket.send(command.RESET);
 }
 
-function fieldClick()
+function fieldClick(id)
 {
-    
-    socket.send("Show Moves");
-
-    // let alt = "A2"; let neu = "A3";
+    if(document.getElementById(id+"img").src.endsWith("images/blank.png"))  //check if field is empty or not
+        socket.send("blank field");
+    else
+        socket.send("Show Moves");
+        
+    // let alt = "A2img"; let neu = "A3img";
     // document.getElementById(neu).src = document.getElementById(alt).src;
     // document.getElementById(alt).src = "";
+}
+
+function updateBoard()
+{
+    for(i = 1; i < msgArray.length(); i++)
+    {
+        if(msgArray[i][0] == color.BLACK)
+        {
+            switch(msgArray[i][1])
+            {
+                case piece.PAWN:
+                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/black_pawn.png";
+                    break;
+                case piece.BISHOP:
+                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/black_bishop.png";
+                    break;
+                case piece.KNIGHT:
+                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/black_knight.png";
+                    break;
+                case piece.ROOK:
+                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/black_rook.png";
+                    break;
+                case piece.QUEEN:
+                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/black_queen.png";
+                    break;
+                case piece.KING:
+                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/black_king.png";
+                    break;
+            }
+        }
+        else if(msgArray[i][0] == color.WHITE)
+        {
+            switch(msgArray[i][1])
+            {
+                case piece.PAWN:
+                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/white_pawn.png";
+                    break;
+                case piece.BISHOP:
+                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/white_bishop.png";
+                    break;
+                case piece.KNIGHT:
+                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/white_knight.png";
+                    break;
+                case piece.ROOK:
+                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/white_rook.png";
+                    break;
+                case piece.QUEEN:
+                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/white_queen.png";
+                    break;
+                case piece.KING:
+                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/white_king.png";
+                    break;
+            }
+        }
+        else
+            document.getElementById(playField[i-1] + "img").src = hostname + "/images/blank.png";
+    }
 }
