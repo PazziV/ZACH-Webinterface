@@ -61,7 +61,6 @@ const socket = new WebSocket("ws://192.168.8.103:9002"); // Huawei Cube
 socket.onopen = function(e)
 {
     console.log("[open] Connection established");
-    socket.send("My name is John");
 };
 
 socket.onmessage = function(event) 
@@ -80,10 +79,10 @@ socket.onmessage = function(event)
             updateBoard();
             break;
         case command.GETMOVES:
-
+            showMoves();
             break;
         case command.MOVE: 
-            movePieceDBClick();
+            movePiece();
             break;
     }
 };
@@ -123,15 +122,11 @@ function fieldClick(id)
         socket.send("blank field");
     else
         socket.send("Show Moves");
-        
-    // let alt = "A2img"; let neu = "A3img";
-    // document.getElementById(neu).src = document.getElementById(alt).src;
-    // document.getElementById(alt).src = "";
 }
 
 function updateBoard()
 {
-    for(i = 1; i < msgArray.length(); i++)
+    for(i = 1; i < msgArray.length; i++)
     {
         if(msgArray[i][0] == color.BLACK)
         {
@@ -184,4 +179,18 @@ function updateBoard()
         else
             document.getElementById(playField[i-1] + "img").src = hostname + "/images/blank.png";
     }
+}
+
+function showMoves()
+{
+    for(i = 1; i < msgArray.length; i++)    // irgendwie muss wieder bg-color geresetet werden wenn andere Figur angetippt oder Figur bewegt wird
+    {
+        let field = document.getElementById(playField[i]);
+        field.style.backgroundColor = "#ff000080";
+    }
+}
+
+function movePiece()
+{
+
 }
