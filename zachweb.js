@@ -52,11 +52,15 @@ const playField = ["A8","B8","C8","D8","E8","F8","G8","H8",
                 "A2","B2","C2","D2","E2","F2","G2","H2",
                 "A1","B1","C1","D1","E1","F1","G1","H1"];
 
+let possibleMoves = [-1];
+
+let selectedPiece = -1;
+
 const hostname = "http://" + location.hostname;
 
 //-------------------------Socket--------------------------
 //const socket = new WebSocket("ws://192.168.100.232:9002"); // bei Handy Hotspot
-const socket = new WebSocket("ws://192.168.8.103:9002"); // Huawei Cube
+const socket = new WebSocket("ws://192.168.8.106:9002"); // Huawei Cube
 
 socket.onopen = function(e)
 {
@@ -82,7 +86,6 @@ socket.onmessage = function(event)
             showMoves();
             break;
         case command.MOVE: 
-            movePiece();
             break;
     }
 };
@@ -118,10 +121,34 @@ function onResetClick()
 
 function fieldClick(id)
 {
-    if(document.getElementById(id+"img").src.endsWith("images/blank.png"))  //check if field is empty or not
-        socket.send("blank field");
+    if(possibleMoves != -1 && possibleMoves.includes(id))
+    {
+        console.log("Move " + selectedPiece + " to " + id);
+        socket.send(command.MOVE + " " + selectedPiece + " " + id);
+
+        document.getElementById(id + "img").src = document.getElementById(selectedPiece + "img").src;
+        document.getElementById(selectedPiece + "img").src = hostname + "/images/blank.png";
+    }
     else
-        socket.send("Show Moves");
+    {
+        if(document.getElementById(id + "img").src.endsWith("images/blank.png") == false)
+        {
+            selectedPiece = id
+            console.log("Show Moves");
+            socket.send(command.GETMOVES + " " + id);
+        }
+    }
+
+    if(possibleMoves != -1)
+    {
+        for(i = 0; i < possibleMoves.length; i++)    // reset field backgrounds
+        {
+            let field = document.getElementById(playField[possibleMoves[i]]);
+            field.style.backgroundColor = "#00000000";
+        }
+
+        possibleMoves = -1
+    }
 }
 
 function updateBoard()
@@ -183,14 +210,12 @@ function updateBoard()
 
 function showMoves()
 {
-    for(i = 1; i < msgArray.length; i++)    // irgendwie muss wieder bg-color geresetet werden wenn andere Figur angetippt oder Figur bewegt wird
+    for(i = 1; i < msgArray.length; i++)
+        possibleMoves[i-1] = msgArray[i];
+
+    for(i = 0; i < possibleMoves.length; i++)    // set color of potential destinations
     {
-        let field = document.getElementById(playField[i]);
+        let field = document.getElementById(playField[possibleMoves[i]]);
         field.style.backgroundColor = "#ff000080";
     }
-}
-
-function movePiece()
-{
-
 }
