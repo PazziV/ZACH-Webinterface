@@ -59,8 +59,8 @@ let selectedPiece = -1;
 const hostname = "http://" + location.hostname;
 
 //-------------------------Socket--------------------------
-//const socket = new WebSocket("ws://192.168.100.232:9002"); // bei Handy Hotspot
-const socket = new WebSocket("ws://192.168.8.106:9002"); // Huawei Cube
+const socket = new WebSocket("ws://192.168.100.232:9002"); // bei Handy Hotspot
+//const socket = new WebSocket("ws://192.168.8.106:9002"); // Huawei Cube
 
 socket.onopen = function(e)
 {
