@@ -124,7 +124,7 @@ function fieldClick(id)
     if(possibleMoves != -1 && possibleMoves.includes(id))
     {
         console.log("Move " + selectedPiece + " to " + id);
-        socket.send(command.MOVE + " " + selectedPiece + " " + id);
+        socket.send(command.MOVE + " " + id2pos(selectedPiece) + " " + id2pos(id));
 
         document.getElementById(id + "img").src = document.getElementById(selectedPiece + "img").src;
         document.getElementById(selectedPiece + "img").src = hostname + "/images/blank.png";
@@ -135,7 +135,7 @@ function fieldClick(id)
         {
             selectedPiece = id
             console.log("Show Moves");
-            socket.send(command.GETMOVES + " " + id);
+            socket.send(command.GETMOVES + " " + id2pos(id));
         }
     }
 
@@ -217,5 +217,14 @@ function showMoves()
     {
         let field = document.getElementById(playField[possibleMoves[i]]);
         field.style.backgroundColor = "#ff000080";
+    }
+}
+
+function id2pos(aId)
+{
+    for(i = 0; i < playField.length; i++)
+    {
+        if(playField[i] == id)
+            return i;
     }
 }
