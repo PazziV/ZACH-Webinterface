@@ -59,8 +59,8 @@ let selectedPiece = -1;
 const hostname = "http://" + location.hostname;
 
 //-------------------------Socket--------------------------
-const socket = new WebSocket("ws://192.168.100.232:9002"); // bei Handy Hotspot
-//const socket = new WebSocket("ws://192.168.8.106:9002"); // Huawei Cube
+//const socket = new WebSocket("ws://192.168.100.232:9002"); // bei Handy Hotspot
+const socket = new WebSocket("ws://192.168.8.106:9002"); // Huawei Cube
 
 socket.onopen = function(e)
 {
@@ -100,6 +100,7 @@ socket.onclose = function(event)
     {
       alert("[close] Connection died");
     }
+    console.log("[close]Connection closed");
 };
   
 socket.onerror = function(error) 
@@ -111,11 +112,13 @@ socket.onerror = function(error)
 
 function syncBoard()
 {
+    console.log("[Sync] Sending: " + command.SYNC);
     socket.send(command.SYNC);
 }
 
 function onResetClick()
 {
+    console.log("[Reset] Sending: " + command.RESET);
     socket.send(command.RESET);
 }
 
@@ -123,7 +126,7 @@ function fieldClick(id)
 {
     if(possibleMoves != -1 && possibleMoves.includes(id))
     {
-        console.log("Move " + selectedPiece + " to " + id);
+        console.log("[Move] Sending: " + command.MOVE + " " + id2pos(selectedPiece) + " " + id2pos(id));
         socket.send(command.MOVE + " " + id2pos(selectedPiece) + " " + id2pos(id));
 
         document.getElementById(id + "img").src = document.getElementById(selectedPiece + "img").src;
@@ -134,7 +137,7 @@ function fieldClick(id)
         if(document.getElementById(id + "img").src.endsWith("images/blank.png") == false)
         {
             selectedPiece = id
-            console.log("Show Moves");
+            console.log("[Show Moves] Sending: " + command.GETMOVES + " " + id2pos(id));
             socket.send(command.GETMOVES + " " + id2pos(id));
         }
     }
@@ -224,7 +227,7 @@ function id2pos(aId)
 {
     for(i = 0; i < playField.length; i++)
     {
-        if(playField[i] == id)
+        if(playField[i] == aId)
             return i;
     }
 }
