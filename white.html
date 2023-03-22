@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="chess.css" type="text/css">
     </head>
 
-    <body onload="syncBoard()">
+    <body>
         <div class="chessboard">
             <!--Reihe 8-->
             <div class="white" id="A8" onclick="fieldClick(id)">
@@ -282,6 +282,7 @@
             </div>
         </div>
 
+        <button id="update" onclick="syncBoard()">Update</button>
         <button id="reset" onclick="onResetClick()">Reset</button>
         <script type="text/javascript" src="zachweb.js"></script>
     </body>

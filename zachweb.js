@@ -60,7 +60,7 @@ const hostname = "http://" + location.hostname;
 
 //-------------------------Socket--------------------------
 //const socket = new WebSocket("ws://192.168.100.232:9002"); // bei Handy Hotspot
-const socket = new WebSocket("ws://192.168.8.106:9002"); // Huawei Cube
+const socket = new WebSocket("ws://192.168.8.103:9002"); // Huawei Cube
 
 socket.onopen = function(e)
 {
@@ -74,7 +74,7 @@ socket.onmessage = function(event)
     
     msgArray = message.split(" ");
 
-    switch(msgArray[0])
+    switch(parseInt(msgArray[0]))
     {
         case command.RESET:
             updateBoard();
@@ -124,7 +124,7 @@ function onResetClick()
 
 function fieldClick(id)
 {
-    if(possibleMoves != -1 && possibleMoves.includes(id))
+    if(possibleMoves.includes(String(id2pos(id))))
     {
         console.log("[Move] Sending: " + command.MOVE + " " + id2pos(selectedPiece) + " " + id2pos(id));
         socket.send(command.MOVE + " " + id2pos(selectedPiece) + " " + id2pos(id));
@@ -142,15 +142,15 @@ function fieldClick(id)
         }
     }
 
-    if(possibleMoves != -1)
+    if(possibleMoves != [-1])
     {
         for(i = 0; i < possibleMoves.length; i++)    // reset field backgrounds
         {
-            let field = document.getElementById(playField[possibleMoves[i]]);
+            let field = document.getElementById(playField[possibleMoves[i]] + "img");
             field.style.backgroundColor = "#00000000";
         }
 
-        possibleMoves = -1
+        possibleMoves = [-1];
     }
 }
 
@@ -218,7 +218,7 @@ function showMoves()
 
     for(i = 0; i < possibleMoves.length; i++)    // set color of potential destinations
     {
-        let field = document.getElementById(playField[possibleMoves[i]]);
+        let field = document.getElementById(playField[possibleMoves[i]] + "img");
         field.style.backgroundColor = "#ff000080";
     }
 }

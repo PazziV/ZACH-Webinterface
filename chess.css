@@ -33,8 +33,14 @@ body{
     bottom: 0.1vh;
 }
 
+#update{
+	position: fixed;
+	bottom: 0.1vh;
+}
+
 .chesspiece{
     height: 100%;
+    width: 100%;
     vertical-align: center;
     padding: 1%;
     display:initial;
