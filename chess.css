@@ -12,6 +12,7 @@ body{
 }
 
 .black{
+    position: relative;
     background: #22434f;
     width: 12.5%;
     height: 12.5%;
@@ -20,6 +21,7 @@ body{
 }
 
 .white{
+    position:relative;
     background: #c2edfc;
     width: 12.5%;
     height: 12.5%;
@@ -34,16 +36,17 @@ body{
 }
 
 #update{
-	position: fixed;
-	bottom: 0.1vh;
+    position: fixed;
+    bottom: 0.1vh;
 }
 
 .chesspiece{
     height: 100%;
     width: 100%;
-    vertical-align: center;
-    padding: 1%;
-    display:initial;
+    display: flex;
+    font-size: 60px;
+    color: black;
+    justify-content: center;
 }
 
 .fieldtext{
