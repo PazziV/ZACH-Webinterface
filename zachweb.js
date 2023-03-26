@@ -17,6 +17,7 @@ else
         board[i].style.height = '98vh';
     }
 }
+
 //------------------------Variables------------------------
 const command = {
     RESET: 0,
@@ -56,22 +57,20 @@ let possibleMoves = [-1];
 
 let selectedPiece = -1;
 
-const hostname = "http://" + location.hostname;
-
 //-------------------------Socket--------------------------
-//const socket = new WebSocket("ws://192.168.100.232:9002"); // bei Handy Hotspot
-const socket = new WebSocket("ws://192.168.8.103:9002"); // Huawei Cube
+const socket = new WebSocket("ws://localhost:9002");
 
 socket.onopen = function(e)
 {
     console.log("[open] Connection established");
+    syncBoard();
 };
 
 socket.onmessage = function(event) 
 {
     let message = event.data;
     console.log("[message] Data received from server: " + message);
-    
+        
     msgArray = message.split(" ");
 
     switch(parseInt(msgArray[0]))
@@ -89,25 +88,24 @@ socket.onmessage = function(event)
             break;
     }
 };
-  
+    
 socket.onclose = function(event) 
 {
     if (event.wasClean) 
     {
-      alert("[close] Connection closed cleanly, code=" + event.code + "reason=" + event.reason);
+        alert("[close] Connection closed cleanly, code=" + event.code + "reason=" + event.reason);
     } 
     else 
     {
-      alert("[close] Connection died");
+        alert("[close] Connection died");
     }
     console.log("[close]Connection closed");
 };
-  
+    
 socket.onerror = function(error) 
 {
     alert("[ERROR]");
 };
-
 //---------------------------------------------------------
 
 function syncBoard()
@@ -129,12 +127,12 @@ function fieldClick(id)
         console.log("[Move] Sending: " + command.MOVE + " " + id2pos(selectedPiece) + " " + id2pos(id));
         socket.send(command.MOVE + " " + id2pos(selectedPiece) + " " + id2pos(id));
 
-        document.getElementById(id + "img").src = document.getElementById(selectedPiece + "img").src;
-        document.getElementById(selectedPiece + "img").src = hostname + "/images/blank.png";
+        document.getElementById(id + "img").textContent = document.getElementById(selectedPiece + "img").textContent;
+        document.getElementById(selectedPiece + "img").textContent = " ";
     }
     else
     {
-        if(document.getElementById(id + "img").src.endsWith("images/blank.png") == false)
+        if(document.getElementById(id + "img").textContent != " ")
         {
             selectedPiece = id
             console.log("[Show Moves] Sending: " + command.GETMOVES + " " + id2pos(id));
@@ -163,22 +161,22 @@ function updateBoard()
             switch(msgArray[i][1])
             {
                 case piece.PAWN:
-                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/black_pawn.png";
+                    document.getElementById(playField[i-1] + "img").textContent = "&#9823;";
                     break;
                 case piece.BISHOP:
-                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/black_bishop.png";
+                    document.getElementById(playField[i-1] + "img").textContent = "&#9821;";
                     break;
                 case piece.KNIGHT:
-                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/black_knight.png";
+                    document.getElementById(playField[i-1] + "img").textContent = "&#9822;";
                     break;
                 case piece.ROOK:
-                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/black_rook.png";
+                    document.getElementById(playField[i-1] + "img").textContent = "&#9820;";
                     break;
                 case piece.QUEEN:
-                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/black_queen.png";
+                    document.getElementById(playField[i-1] + "img").textContent = "&#9819;";
                     break;
                 case piece.KING:
-                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/black_king.png";
+                    document.getElementById(playField[i-1] + "img").textContent = "&#9818;";
                     break;
             }
         }
@@ -187,27 +185,27 @@ function updateBoard()
             switch(msgArray[i][1])
             {
                 case piece.PAWN:
-                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/white_pawn.png";
+                    document.getElementById(playField[i-1] + "img").textContent = "&#9817;";
                     break;
                 case piece.BISHOP:
-                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/white_bishop.png";
+                    document.getElementById(playField[i-1] + "img").textContent = "&#9815;";
                     break;
                 case piece.KNIGHT:
-                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/white_knight.png";
+                    document.getElementById(playField[i-1] + "img").textContent = "&#9816;";
                     break;
                 case piece.ROOK:
-                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/white_rook.png";
+                    document.getElementById(playField[i-1] + "img").textContent = "&#9814;";
                     break;
                 case piece.QUEEN:
-                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/white_queen.png";
+                    document.getElementById(playField[i-1] + "img").textContent = "&#9813;";
                     break;
                 case piece.KING:
-                    document.getElementById(playField[i-1] + "img").src = hostname + "/images/white_king.png";
+                    document.getElementById(playField[i-1] + "img").textContent = "&#9812;";
                     break;
             }
         }
         else
-            document.getElementById(playField[i-1] + "img").src = hostname + "/images/blank.png";
+            document.getElementById(playField[i-1] + "img").textContent = " ";
     }
 }
 
