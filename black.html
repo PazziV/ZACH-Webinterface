@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zauberschach: Schwarz</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+        <link rel="stylesheet" href="chess.css" type="text/css">
+    </head>
+
+    <body>
+        <div class="chessboard">
+			<!--Reihe 1-->
+            <div class="black" id="A1" onclick="fieldClick(id)">
+                <div class="fieldtext">A1</div>
+                <img class="chesspiece" id="A1img" src="images/white_rook.png"/>
+            </div>
+            <div class="white" id="B1" onclick="fieldClick(id)">
+                <div class="fieldtext">B1</div>
+                <img class="chesspiece" id="B1img" src="images/white_knight.png"/>
+            </div>
+            <div class="black" id="C1" onclick="fieldClick(id)">
+                <div class="fieldtext">C1</div>
+                <img class="chesspiece" id="C1img" src="images/white_bishop.png"/>
+            </div>
+            <div class="white" id="D1" onclick="fieldClick(id)">
+                <div class="fieldtext">D1</div>
+                <img class="chesspiece" id="D1img" src="images/white_queen.png"/>
+            </div>
+            <div class="black" id="E1" onclick="fieldClick(id)">
+                <div class="fieldtext">E1</div>
+                <img class="chesspiece" id="E1img" src="images/white_king.png"/>
+            </div>
+            <div class="white" id="F1" onclick="fieldClick(id)">
+                <div class="fieldtext">F1</div>
+                <img class="chesspiece" id="F1img" src="images/white_bishop.png"/>
+            </div>
+            <div class="black" id="G1" onclick="fieldClick(id)">
+                <div class="fieldtext">G1</div>
+                <img class="chesspiece" id="G1img" src="images/white_knight.png"/>
+            </div>
+            <div class="white" id="H1" onclick="fieldClick(id)">
+                <div class="fieldtext">H1</div>
+                <img class="chesspiece" id="H1img" src="images/white_rook.png"/>
+            </div>
+			
+			<!--Reihe 2-->
+            <div class="white" id="A2" onclick="fieldClick(id)">
+                <div class="fieldtext">A2</div>
+                <img class="chesspiece" id="A2img" src="images/white_pawn.png"/>
+            </div>
+            <div class="black" id="B2" onclick="fieldClick(id)">
+                <div class="fieldtext">B2</div>
+                <img class="chesspiece" id="B2img" src="images/white_pawn.png"/>
+            </div>
+            <div class="white" id="C2" onclick="fieldClick(id)">
+                <div class="fieldtext">C2</div>
+                <img class="chesspiece" id="C2img" src="images/white_pawn.png"/>
+            </div>
+            <div class="black" id="D2" onclick="fieldClick(id)">
+                <div class="fieldtext">D2</div>
+                <img class="chesspiece" id="D2img" src="images/white_pawn.png"/>
+            </div>
+            <div class="white" id="E2" onclick="fieldClick(id)">
+                <div class="fieldtext">E2</div>
+                <img class="chesspiece" id="E2img" src="images/white_pawn.png"/>
+            </div>
+            <div class="black" id="F2" onclick="fieldClick(id)">
+                <div class="fieldtext">F2</div>
+                <img class="chesspiece" id="F2img" src="images/white_pawn.png"/>
+            </div>
+            <div class="white" id="G2" onclick="fieldClick(id)">
+                <div class="fieldtext">G2</div>
+                <img class="chesspiece" id="G2img" src="images/white_pawn.png"/>
+            </div>
+            <div class="black" id="H2" onclick="fieldClick(id)">
+                <div class="fieldtext">H2</div>
+                <img class="chesspiece" id="H2img" src="images/white_pawn.png"/>
+            </div>
+			
+            <!--Reihe 3-->
+            <div class="black" id="A3" onclick="fieldClick(id)">
+                <div class="fieldtext">A3</div>
+                <img class="chesspiece" id="A3img" src="images/blank.png"/>
+            </div>
+            <div class="white" id="B3" onclick="fieldClick(id)">
+                <div class="fieldtext">B3</div>
+                <img class="chesspiece" id="B3img" src="images/blank.png"/>
+            </div>
+            <div class="black" id="C3" onclick="fieldClick(id)">
+                <div class="fieldtext">C3</div>
+                <img class="chesspiece" id="C3img" src="images/blank.png"/>
+            </div>
+            <div class="white" id="D3" onclick="fieldClick(id)">
+                <div class="fieldtext">D3</div>
+                <img class="chesspiece" id="D3img" src="images/blank.png"/>
+            </div>
+            <div class="black" id="E3" onclick="fieldClick(id)">
+                <div class="fieldtext">E3</div>
+                <img class="chesspiece" id="E3img" src="images/blank.png"/>
+            </div>
+            <div class="white" id="F3" onclick="fieldClick(id)">
+                <div class="fieldtext">F3</div>
+                <img class="chesspiece" id="F3img" src="images/blank.png"/>
+            </div>
+            <div class="black" id="G3" onclick="fieldClick(id)">
+                <div class="fieldtext">G3</div>
+                <img class="chesspiece" id="G3img" src="images/blank.png"/>
+            </div>
+            <div class="white" id="H3" onclick="fieldClick(id)">
+                <div class="fieldtext">H3</div>
+                <img class="chesspiece" id="H3img" src="images/blank.png"/>
+            </div>
+
+            <!--Reihe 4-->
+            <div class="white" id="A4" onclick="fieldClick(id)">
+                <div class="fieldtext">A4</div>
+                <img class="chesspiece" id="A4img" src="images/blank.png"/>
+            </div>
+            <div class="black" id="B4" onclick="fieldClick(id)">
+                <div class="fieldtext">B4</div>
+                <img class="chesspiece" id="B4img" src="images/blank.png"/>
+            </div>
+            <div class="white" id="C4" onclick="fieldClick(id)">
+                <div class="fieldtext">C4</div>
+                <img class="chesspiece" id="C4img" src="images/blank.png"/>
+            </div>
+            <div class="black" id="D4" onclick="fieldClick(id)">
+                <div class="fieldtext">D4</div>
+                <img class="chesspiece" id="D4img" src="images/blank.png"/>
+            </div>
+            <div class="white" id="E4" onclick="fieldClick(id)">
+                <div class="fieldtext">E4</div>
+                <img class="chesspiece" id="E4img" src="images/blank.png"/>
+            </div>
+            <div class="black" id="F4" onclick="fieldClick(id)">
+                <div class="fieldtext">F4</div>
+                <img class="chesspiece" id="F4img" src="images/blank.png"/>
+            </div>
+            <div class="white" id="G4" onclick="fieldClick(id)">
+                <div class="fieldtext">G4</div>
+                <img class="chesspiece" id="G4img" src="images/blank.png"/>
+            </div>
+            <div class="black" id="H4" onclick="fieldClick(id)">
+                <div class="fieldtext">H4</div>
+                <img class="chesspiece" id="H4img" src="images/blank.png"/>
+            </div>
+
+            <!--Reihe 5-->
+            <div class="black" id="A5" onclick="fieldClick(id)">
+                <div class="fieldtext">A5</div>
+                <img class="chesspiece" id="A5img" src="images/blank.png"/>
+            </div>
+            <div class="white" id="B5" onclick="fieldClick(id)">
+                <div class="fieldtext">B5</div>
+                <img class="chesspiece" id="B5img" src="images/blank.png"/>
+            </div>
+            <div class="black" id="C5" onclick="fieldClick(id)">
+                <div class="fieldtext">C5</div>
+                <img class="chesspiece" id="C5img" src="images/blank.png"/>
+            </div>
+            <div class="white" id="D5" onclick="fieldClick(id)">
+                <div class="fieldtext">D5</div>
+                <img class="chesspiece" id="D5img" src="images/blank.png"/>
+            </div>
+            <div class="black" id="E5" onclick="fieldClick(id)">
+                <div class="fieldtext">E5</div>
+                <img class="chesspiece" id="E5img" src="images/blank.png"/>
+            </div>
+            <div class="white" id="F5" onclick="fieldClick(id)">
+                <div class="fieldtext">F5</div>
+                <img class="chesspiece" id="F5img" src="images/blank.png"/>
+            </div>
+            <div class="black" id="G5" onclick="fieldClick(id)">
+                <div class="fieldtext">G5</div>
+                <img class="chesspiece" id="G5img" src="images/blank.png"/>
+            </div>
+            <div class="white" id="H5" onclick="fieldClick(id)">
+                <div class="fieldtext">H5</div>
+                <img class="chesspiece" id="H5img" src="images/blank.png"/>
+            </div>
+
+            <!--Reihe 6-->
+            <div class="white" id="A6" onclick="fieldClick(id)">
+                <div class="fieldtext">A6</div>
+                <img class="chesspiece" id="A6img" src="images/blank.png"/>
+            </div>
+            <div class="black" id="B6" onclick="fieldClick(id)">
+                <div class="fieldtext">B6</div>
+                <img class="chesspiece" id="B6img" src="images/blank.png"/>
+            </div>
+            <div class="white" id="C6" onclick="fieldClick(id)">
+                <div class="fieldtext">C6</div>
+                <img class="chesspiece" id="C6img" src="images/blank.png"/>
+            </div>
+            <div class="black" id="D6" onclick="fieldClick(id)">
+                <div class="fieldtext">D6</div>
+                <img class="chesspiece" id="D6img" src="images/blank.png"/>
+            </div>
+            <div class="white" id="E6" onclick="fieldClick(id)">
+                <div class="fieldtext">E6</div>
+                <img class="chesspiece" id="E6img" src="images/blank.png"/>
+            </div>
+            <div class="black" id="F6" onclick="fieldClick(id)">
+                <div class="fieldtext">F6</div>
+                <img class="chesspiece" id="F6img" src="images/blank.png"/>
+            </div>
+            <div class="white" id="G6" onclick="fieldClick(id)">
+                <div class="fieldtext">G6</div>
+                <img class="chesspiece" id="G6img" src="images/blank.png"/>
+            </div>
+            <div class="black" id="H6" onclick="fieldClick(id)">
+                <div class="fieldtext">H6</div>
+                <img class="chesspiece" id="H6img" src="images/blank.png"/>
+            </div>
+
+            <!--Reihe 7-->
+            <div class="black" id="A7" onclick="fieldClick(id)">
+                <div class="fieldtext">A7</div>
+                <img class="chesspiece" id="A7img" src="images/black_pawn.png"/>
+            </div>
+            <div class="white" id="B7" onclick="fieldClick(id)">
+                <div class="fieldtext">B7</div>
+                <img class="chesspiece" id="B7img" src="images/black_pawn.png"/>
+            </div>
+            <div class="black" id="C7" onclick="fieldClick(id)">
+                <div class="fieldtext">C7</div>
+                <img class="chesspiece" id="C7img" src="images/black_pawn.png"/>
+            </div>
+            <div class="white" id="D7" onclick="fieldClick(id)">
+                <div class="fieldtext">D7</div>
+                <img class="chesspiece" id="D7img" src="images/black_pawn.png"/>
+            </div>
+            <div class="black" id="E7" onclick="fieldClick(id)">
+                <div class="fieldtext">E7</div>
+                <img class="chesspiece" id="E7img" src="images/black_pawn.png"/>
+            </div>
+            <div class="white" id="F7" onclick="fieldClick(id)">
+                <div class="fieldtext">F7</div>
+                <img class="chesspiece" id="F7img" src="images/black_pawn.png"/>
+            </div>
+            <div class="black" id="G7" onclick="fieldClick(id)">
+                <div class="fieldtext">G7</div>
+                <img class="chesspiece" id="G7img" src="images/black_pawn.png"/>
+            </div>
+            <div class="white" id="H7" onclick="fieldClick(id)">
+                <div class="fieldtext">H7</div>
+                <img class="chesspiece" id="H7img" src="images/black_pawn.png"/>
+            </div>
+			
+			<!--Reihe 8-->
+            <div class="white" id="A8" onclick="fieldClick(id)">
+                <div class="fieldtext">A8</div>
+                <img class="chesspiece" id="A8img" src="images/black_rook.png"/>
+            </div>
+            <div class="black" id="B8" onclick="fieldClick(id)">
+                <div class="fieldtext">B8</div>
+                <img class="chesspiece" id="B8img" src="images/black_knight.png"/>
+            </div>
+            <div class="white" id="C8" onclick="fieldClick(id)">
+                <div class="fieldtext">C8</div>
+                <img class="chesspiece" id="C8img" src="images/black_bishop.png"/>
+            </div>
+            <div class="black" id="D8" onclick="fieldClick(id)">
+                <div class="fieldtext">D8</div>
+                <img class="chesspiece" id="D8img" src="images/black_queen.png"/>
+            </div>
+            <div class="white" id="E8" onclick="fieldClick(id)">
+                <div class="fieldtext">E8</div>
+                <img class="chesspiece" id="E8img"  src="images/black_king.png"/>
+            </div>
+            <div class="black" id="F8" onclick="fieldClick(id)">
+                <div class="fieldtext">F8</div>
+                <img class="chesspiece" id="F8img" src="images/black_bishop.png"/>
+            </div>
+            <div class="white" id="G8" onclick="fieldClick(id)">
+                <div class="fieldtext">G8</div>
+                <img class="chesspiece" id="G8img" src="images/black_knight.png"/>
+            </div>
+            <div class="black" id="H8" onclick="fieldClick(id)">
+                <div class="fieldtext">H8</div>
+                <img class="chesspiece" id="H8img" src="images/black_rook.png"/>
+            </div>
+		</div>
+		
+		<button id="update" onclick="syncBoard()">Update</button>
+        <button id="reset" onclick="onResetClick()">Reset</button>
+		
+        <script type="text/javascript" src="black.js"></script>
+    </body>
+</html>
