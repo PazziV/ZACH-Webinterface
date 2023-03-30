@@ -58,7 +58,7 @@ let possibleMoves = [-1];
 let selectedPiece = -1;
 
 //-------------------------Socket--------------------------
-const socket = new WebSocket("ws://192.168.100.232:9002");
+const socket = new WebSocket("ws://" + location.hostname + ":9002");
 
 socket.onopen = function(e)
 {
