@@ -1,15 +1,20 @@
 body{
     background: #356dde;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    overflow: hidden;
 }
 
 .chessboard{
     background: grey;
-    width: 98vh;
-    height: 98vh;
+    width: min(98vh, 98vw);
+    height: min(98vh, 98vw);
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    
+    margin-inline: auto;
+    margin-block: auto;
 }
 
 .black{
@@ -19,7 +24,6 @@ body{
     height: 12.5%;
     float: left;
     color: white;
-    
 }
 
 .white{
@@ -31,36 +35,59 @@ body{
     color: white;
 }
 
-#reset{
-    position: absolute;
-    top: 45vh;
-    left: 1vw;
-    width: 10vw;
-}
-
-#update{
-    position: absolute;
-    top: 50vh;
-    left: 1vw;
-    width: 10vw;
-}
-
-#calibrate{
-    position: absolute;
-    top: 55vh;
-    left: 1vw;
-    width: 10vw;
-}
-
 .chesspiece{
     height: 100%;
     width: 100%;
 	display: flex;
-    font-size: 60px;
+    font-size: min(10vw, 10vh);
     color: black;
     justify-content: center;
 }
 
 .fieldtext{
     position: absolute;
+}
+
+.dropdown-container{
+    position: absolute;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    margin: min(1vh, 1vw);
+}
+
+.dropdown-button{
+    width: min(45px, 10vw);
+    aspect-ratio: 1;
+    text-align: center;
+    font-size:  min(45px, 10vw);
+}
+
+.dropdown-container:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content{
+    position: absolute;
+    display: none;
+}
+
+.dropdown-content:last-child{
+    border-bottom: 1px solid white;
+}
+
+.button{
+    all: unset;
+    width: min(50vw, 300px);
+    text-align: center;
+    font-size: 24px;
+    padding: 5px;
+    border: 1px solid white;
+    border-bottom: 0px;
+    background: #315fbc;
+    color: white;
+}
+
+.button:hover{
+    background: #2b53a4;
 }

@@ -7,6 +7,15 @@
     </head>
 
     <body>
+        <div class="dropdown-container">
+            <div class="dropdown-button">&#x2630</div>
+            <div class="dropdown-content">
+                <button class="button" onclick="syncBoard()">Update</button>
+                <button class="button" onclick="onResetClick()">Reset</button>
+                <button class="button" onclick="calibrateMagnet()">Calibrate Magnet</button>
+            </div>
+        </div>
+
         <div class="chessboard">
 			<!--Reihe 1-->
             <div class="black" id="A1" onclick="fieldClick(id)">
@@ -280,10 +289,6 @@
                 <div class="chesspiece" id="H8img">&#9820;</div>
             </div>
 		</div>
-		
-		<button id="update" onclick="syncBoard()">Update</button>
-        <button id="reset" onclick="onResetClick()">Reset</button>
-        <button id="calibrate" onclick="calibrateMagnet()">Calibrate Magnet</button>
 		
         <script type="text/javascript" src="black.js"></script>
     </body>
