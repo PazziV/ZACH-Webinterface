@@ -32,14 +32,24 @@ body{
 }
 
 #reset{
-    position: fixed;
-    right: 0.1vw;
-    bottom: 0.1vh;
+    position: absolute;
+    top: 45vh;
+    left: 1vw;
+    width: 10vw;
 }
 
 #update{
-	position: absolute;
-	bottom: 0.1vh;
+    position: absolute;
+    top: 50vh;
+    left: 1vw;
+    width: 10vw;
+}
+
+#calibrate{
+    position: absolute;
+    top: 55vh;
+    left: 1vw;
+    width: 10vw;
 }
 
 .chesspiece{

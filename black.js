@@ -23,7 +23,8 @@ const command = {
     RESET: 0,
     SYNC: 1,
     GETMOVES: 2,
-    MOVE: 3
+    MOVE: 3,
+    CALIBRATE: 4
 };
 
 const color = {
@@ -85,6 +86,8 @@ socket.onmessage = function(event)
             showMoves();
             break;
         case command.MOVE: 
+            break;
+        case command.CALIBRATE:
             break;
     }
 };
@@ -219,6 +222,12 @@ function showMoves()
         let field = document.getElementById(playField[possibleMoves[i]] + "img");
         field.style.backgroundColor = "#ff000080";
     }
+}
+
+function calibrateMagnet()
+{
+    console.log("[CALIBRATE] Sending: " + command.CALIBRATE);
+    socket.send(command.CALIBRATE);
 }
 
 function id2pos(aId)
